@@ -4,8 +4,7 @@
   "description": "Simple chat application using Node.js and Socket.io",
   "main": "app.js",
   "dependencies": {
-    "socket.io": "0.9.16",
-    "express": "3.5.1",
+    "express.io": "*",
     "mongoose": "3.8.8",
     "mongodb": "^1.4.0"
   },
