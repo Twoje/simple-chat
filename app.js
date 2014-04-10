@@ -6,11 +6,17 @@ app.http().io()
 
 var io = app.io;
 
-var uristring =
-process.env.MONGOLAB_URI ||
-'mongodb://localhost/HelloMongoose';
+var uristring = process.env.MONGOLAB_URI || 'mongodb://localhost/HelloMongoose';
 
-var theport = process.env.PORT || 5000;
+var port = process.env.PORT || 5000;
+
+// Heroku won't actually allow us to use WebSockets
+// so we have to setup polling instead.
+// https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
+io.configure(function () {
+  io.set("transports", ["xhr-polling"]);
+  io.set("polling duration", 10);
+});
 
 mongoose.connect(uristring, function (err, res) {
   if (err) {
@@ -96,4 +102,4 @@ io.sockets.on('connection', function(socket) {
 	});
 });
 
-app.listen(7076)
+app.listen(port)
