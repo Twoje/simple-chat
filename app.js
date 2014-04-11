@@ -40,7 +40,7 @@ app.get('/', function(req, res) {
 
 io.sockets.on('connection', function(socket) {
 	var query = Chat.find({});
-	query.sort('-created').limit(8).exec(function(err, data) {
+	query.sort('-created').exec(function(err, data) {
 		if(err) {
 			throw err;
 		} else {
