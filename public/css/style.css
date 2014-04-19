@@ -1,0 +1,46 @@
+body {
+	font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+#chat{
+	height: 500px;
+	overflow-y: scroll;
+}
+#contentWrap {
+	display: none;
+}
+#chatWrap {
+	float: left;
+	border: 1px #000 solid;
+	width: 400px;
+	max-width: 400px;
+	margin-right: 10px;
+}
+#send-message {
+	border-top: 1px #000 solid;
+	height: 50px;
+}
+.error {
+	color: red;
+}
+.whisper {
+	font-style: italic;
+	color: gray;
+}
+.msg, .whisper, .error {
+	word-break: break-all;
+}
+.nick {
+	font-weight: bold;
+	color:blue;
+}
+.usr-msg .nick {
+	color:red;
+}
+#nickWrap {
+	text-align:center;
+	margin-top: 50px;
+}
+#message {
+	height:100%;
+}
