@@ -18,8 +18,8 @@ mongoose.connect(db.url, function (err, res) {
 // Heroku won't actually allow us to use WebSockets
 // so we have to setup polling instead.
 // https://devcenter.heroku.com/articles/using-socket-io-with-node-js-on-heroku
-app.io.set("transports", ["xhr-polling"]);
-app.io.set("polling duration", 10);
+app.set("transports", ["xhr-polling"]);
+app.set("polling duration", 10);
 app.use(express.static(__dirname + '/public'));
 
 var users = {};
